@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import Greeting from './components/greeting'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -19,7 +19,10 @@ function App() {
       <button onClick={clickHandler}>
         click me
       </button>
-      {isLoggedIn && <div>{user.name}</div>}
+      {isLoggedIn && (<>
+        <div>{user.name}</div>
+        <Greeting />
+      </>)}
     </div>
 
   )
